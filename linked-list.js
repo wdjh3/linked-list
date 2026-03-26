@@ -42,6 +42,17 @@ class LinkedList {
     }
     return this.#head;
   }
+
+  tail() {
+    if (!this.#head) {
+        return undefined;
+    }
+    let currentNode = this.#head;
+    while (currentNode.nextNode) {
+        currentNode = currentNode.nextNode;
+    }
+    return currentNode;
+  }
 }
 
 class Node {
@@ -56,13 +67,12 @@ class Node {
 
 
 // list.append("dog");
-// console.log(list.head());
 // list.append("cat");
 // list.append("parrot");
 // list.prepend("hamster");
 // list.prepend("snake");
 // list.prepend("turtle");
 
-// console.log(list.head());
+// console.log(list.tail());
 
 // console.log(JSON.stringify(list.head()));
