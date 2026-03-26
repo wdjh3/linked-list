@@ -130,6 +130,9 @@ class LinkedList {
     if (!this.#head || index >= this.size()) {
       throw new RangeError("The index is out of bounds.");
     }
+    if (index === 0) {
+        this.#head = this.#head.nextNode;
+    }
     let currentNode = this.#head;
     for (let i = 0; i < index - 1; i++) {
       currentNode = currentNode.nextNode;
