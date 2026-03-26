@@ -11,5 +11,6 @@ list.append("snake");
 list.append("turtle");
 
 list.insertAt(3, "tortoise", "pig");
+list.removeAt(4);
 
 console.log(list.toString());
