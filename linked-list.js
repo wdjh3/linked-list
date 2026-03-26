@@ -78,10 +78,10 @@ class LinkedList {
   contains(value) {
     let currentNode = this.#head;
     while (currentNode) {
-        if (currentNode.value === value) {
-            return true;
-        }
-        currentNode = currentNode.nextNode;
+      if (currentNode.value === value) {
+        return true;
+      }
+      currentNode = currentNode.nextNode;
     }
     return false;
   }
@@ -89,12 +89,25 @@ class LinkedList {
   findIndex(value) {
     let currentNode = this.#head;
     for (let i = 0; !!currentNode; i++) {
-        if (currentNode.value === value) {
-            return i;
-        }
-        currentNode = currentNode.nextNode;
+      if (currentNode.value === value) {
+        return i;
+      }
+      currentNode = currentNode.nextNode;
     }
     return -1;
+  }
+
+  toString() {
+    let string = "";
+    let currentNode = this.#head;
+    while (currentNode !== null) {
+      string += `( ${currentNode.value} ) -> `;
+      currentNode = currentNode.nextNode;
+    }
+
+    string += "null";
+
+    return string;
   }
 }
 
@@ -105,15 +118,4 @@ class Node {
   }
 }
 
-// example uses class syntax - adjust as necessary
-// const list = new LinkedList();
-// list.append("dog");
-// list.append("cat");
-// list.append("parrot");
-// list.prepend("hamster");
-// list.prepend("snake");
-// list.prepend("turtle");
-// console.log(list.findIndex("parrot"));
-// console.log(list.findIndex("sheep"));
-
-// console.log(JSON.stringify(list.head()));
+export { LinkedList };
