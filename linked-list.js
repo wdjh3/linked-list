@@ -38,19 +38,31 @@ class LinkedList {
 
   head() {
     if (!this.#head) {
-        return undefined;
+      return undefined;
     }
     return this.#head;
   }
 
   tail() {
     if (!this.#head) {
-        return undefined;
+      return undefined;
     }
     let currentNode = this.#head;
     while (currentNode.nextNode) {
-        currentNode = currentNode.nextNode;
+      currentNode = currentNode.nextNode;
     }
+    return currentNode;
+  }
+
+  at(index) {
+    if (!this.#head || index >= this.size()) {
+      return undefined;
+    }
+    let currentNode = this.#head;
+    for (let i = 0; i < index; i++) {
+      currentNode = currentNode.nextNode;
+    }
+
     return currentNode;
   }
 }
@@ -64,15 +76,11 @@ class Node {
 
 // example uses class syntax - adjust as necessary
 // const list = new LinkedList();
-
-
 // list.append("dog");
 // list.append("cat");
 // list.append("parrot");
 // list.prepend("hamster");
 // list.prepend("snake");
 // list.prepend("turtle");
-
-// console.log(list.tail());
-
+// console.log(list.at(5));
 // console.log(JSON.stringify(list.head()));
