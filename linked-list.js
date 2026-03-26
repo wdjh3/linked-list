@@ -25,6 +25,17 @@ class LinkedList {
       this.head = newNode;
     }
   }
+
+  size() {
+    let count = 0;
+    let currentNode = this.head;
+    while (currentNode) {
+        count++
+        currentNode = currentNode.nextNode;
+    }
+
+    return count;
+  }
 }
 
 class Node {
@@ -43,5 +54,7 @@ class Node {
 // list.prepend("hamster");
 // list.prepend("snake");
 // list.prepend("turtle");
+
+// console.log(list.size());
 
 // console.log(JSON.stringify(list));
