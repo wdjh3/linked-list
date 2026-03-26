@@ -111,7 +111,7 @@ class LinkedList {
   }
 
   insertAt(index, ...values) {
-    if (!this.#head || index >= this.size()) {
+    if (index < 0 || index > this.size()) {
       throw new RangeError("The index is out of bounds.");
     }
     let currentNode = this.#head;
