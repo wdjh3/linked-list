@@ -16,14 +16,15 @@ class LinkedList {
     }
   }
 
-//   prepend(value) {
-//     const newNode = new Node(value);
-//     if (!this.head) {
-//         this.head = newNode;
-//     } else {
-
-//     }
-//   }
+  prepend(value) {
+    const newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+    } else {
+      newNode.nextNode = this.head;
+      this.head = newNode;
+    }
+  }
 }
 
 class Node {
@@ -34,13 +35,13 @@ class Node {
 }
 
 // example uses class syntax - adjust as necessary
-const list = new LinkedList();
+// const list = new LinkedList();
 
-list.append("dog");
-list.append("cat");
-list.append("parrot");
-list.append("hamster");
-list.append("snake");
-list.append("turtle");
+// list.append("dog");
+// list.append("cat");
+// list.append("parrot");
+// list.prepend("hamster");
+// list.prepend("snake");
+// list.prepend("turtle");
 
-console.log(JSON.stringify(list));
+// console.log(JSON.stringify(list));
