@@ -138,6 +138,7 @@ class LinkedList {
     }
     if (index === 0) {
       this.#head = this.#head.nextNode;
+      return;
     }
     let currentNode = this.#head;
     for (let i = 0; i < index - 1; i++) {
