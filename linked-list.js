@@ -65,6 +65,15 @@ class LinkedList {
 
     return currentNode;
   }
+
+  pop() {
+    if (!this.#head) {
+        return undefined;
+    }
+    const headNode = this.#head;
+    this.#head = headNode.nextNode;
+    return headNode;
+  }
 }
 
 class Node {
@@ -82,5 +91,6 @@ class Node {
 // list.prepend("hamster");
 // list.prepend("snake");
 // list.prepend("turtle");
-// console.log(list.at(5));
+// console.log(list.pop());
+// console.log(list.pop());
 // console.log(JSON.stringify(list.head()));
