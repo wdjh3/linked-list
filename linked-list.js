@@ -85,6 +85,17 @@ class LinkedList {
     }
     return false;
   }
+
+  findIndex(value) {
+    let currentNode = this.#head;
+    for (let i = 0; !!currentNode; i++) {
+        if (currentNode.value === value) {
+            return i;
+        }
+        currentNode = currentNode.nextNode;
+    }
+    return -1;
+  }
 }
 
 class Node {
@@ -102,7 +113,7 @@ class Node {
 // list.prepend("hamster");
 // list.prepend("snake");
 // list.prepend("turtle");
-// console.log(list.contains("snake"));
-// console.log(list.contains("sheep"));
+// console.log(list.findIndex("parrot"));
+// console.log(list.findIndex("sheep"));
 
 // console.log(JSON.stringify(list.head()));
