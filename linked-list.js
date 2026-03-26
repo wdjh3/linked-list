@@ -115,6 +115,12 @@ class LinkedList {
       throw new RangeError("The index is out of bounds.");
     }
     let currentNode = this.#head;
+    if (index === 0) {
+      for (let i = values.length - 1; i >= 0; i--) {
+        this.prepend(values[i]);
+      }
+      return;
+    }
     for (let i = 0; i < index - 1; i++) {
       currentNode = currentNode.nextNode;
     }
@@ -125,13 +131,13 @@ class LinkedList {
       currentNode = newNode;
     }
   }
-  
+
   removeAt(index) {
     if (!this.#head || index >= this.size()) {
       throw new RangeError("The index is out of bounds.");
     }
     if (index === 0) {
-        this.#head = this.#head.nextNode;
+      this.#head = this.#head.nextNode;
     }
     let currentNode = this.#head;
     for (let i = 0; i < index - 1; i++) {
