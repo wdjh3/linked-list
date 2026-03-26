@@ -109,6 +109,38 @@ class LinkedList {
 
     return string;
   }
+
+  insertAt(index, ...values) {
+    if (!this.#head || index >= this.size()) {
+      throw new RangeError("The index is out of bounds.");
+    }
+    let currentNode = this.#head;
+    for (let i = 0; i < index - 1; i++) {
+      currentNode = currentNode.nextNode;
+    }
+    for (const value of values) {
+      const newNode = new Node(value);
+      newNode.nextNode = currentNode.nextNode;
+      currentNode.nextNode = newNode;
+      currentNode = newNode;
+    }
+  }
+  
+//   removeAt(index) {
+//     if (!this.#head || index >= this.size()) {
+//       throw new RangeError("The index is out of bounds.");
+//     }
+//     let currentNode = this.#head;
+//     for (let i = 0; i < index - 1; i++) {
+//       currentNode = currentNode.nextNode;
+//     }
+//     for (const value of values) {
+//       const newNode = new Node(value);
+//       newNode.nextNode = currentNode.nextNode;
+//       currentNode.nextNode = newNode;
+//       currentNode = newNode;
+//     }
+//   }
 }
 
 class Node {
