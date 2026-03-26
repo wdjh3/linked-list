@@ -68,11 +68,22 @@ class LinkedList {
 
   pop() {
     if (!this.#head) {
-        return undefined;
+      return undefined;
     }
     const headNode = this.#head;
     this.#head = headNode.nextNode;
     return headNode;
+  }
+
+  contains(value) {
+    let currentNode = this.#head;
+    while (currentNode) {
+        if (currentNode.value === value) {
+            return true;
+        }
+        currentNode = currentNode.nextNode;
+    }
+    return false;
   }
 }
 
@@ -91,6 +102,7 @@ class Node {
 // list.prepend("hamster");
 // list.prepend("snake");
 // list.prepend("turtle");
-// console.log(list.pop());
-// console.log(list.pop());
+// console.log(list.contains("snake"));
+// console.log(list.contains("sheep"));
+
 // console.log(JSON.stringify(list.head()));
