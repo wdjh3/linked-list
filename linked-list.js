@@ -72,7 +72,7 @@ class LinkedList {
     }
     const headNode = this.#head;
     this.#head = headNode.nextNode;
-    return headNode;
+    return headNode.value;
   }
 
   contains(value) {
